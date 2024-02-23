@@ -25,21 +25,38 @@ The dataset is derived from direct marketing campaigns conducted by a Portuguese
 - Min-Max Scaler was applied to normalize features.
 
 #### Model
-Logistic, Random, Gradient, LightGBM, XGBoost. We go with Scaled one. We focus on most positives - recall. Hence, Gradient Boosting. If client was contacted before, XX. 
-Organic in Mar and Sept (They approached). Wrong time of campaign in May - Aug. Apr is tax season. Marketing campaign after tax.
-threshold of 0.5. PR curve (most efficient threshold?)
-Useful to perform cross-validation.
-Gradient Boosting over Logistic.
+We evaluated several classification models:
+1. Logistic Regression
+2. Random Forest
+3. Gradient Boosting
+4. LightGBM
+5. XGBoost
+
+- Set a threshold of 0.5 for decision-making. [PLEASE ADDRESS THIS]
+- Evaluated model performance using PR curve to determine the most efficient threshold. [PLEASE ADDRESS THIS]
+- Conducted cross-validation to ensure robustness. [PLEASE ADDRESS THIS]
+- We also considered whether a client had been contacted previously.
+
+Model Selection:
+- Considering our focus on maximizing recall (identifying true positives), we selected the scaled Gradient Boosting model.
+- Preferred Gradient Boosting over Logistic Regression for its superior performance.
+
+Timing Considerations:
+- Organic marketing efforts were most effective in March and September.
+- Campaigns conducted between May and August were less successful.
+- April, being tax season, influenced customer behavior.
+- Post-tax marketing campaigns were strategically timed.
 
 ### Uplift Modelling
-Target is conversion.
-Treatment is poutcome
-LinearDML
-ForestMDL (confidence > kinear)
-Causal only on success or failure.
+#### Approach 1:
+Our target variable is conversion.
+The treatment variable is “poutcome.”
+Employed LinearDML and ForestMDL, prioritizing confidence in predictions.
+Focused solely on causal effects concerning success or failure outcomes.
 
-Train model for success + train model for failure.
-ROC curve. Predicting the prob of success.
+#### Approach 2:
+Trained separate models for success and failure scenarios.
+Assessed model performance using ROC curve to predict the probability of success.
 
 
 
