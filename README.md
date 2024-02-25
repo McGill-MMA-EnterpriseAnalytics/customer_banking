@@ -25,17 +25,13 @@ The dataset is derived from direct marketing campaigns conducted by a Portuguese
 - Min-Max Scaler was applied to normalize features.
 
 #### Model
-We evaluated several classification models:
+- We evaluated several classification models:
 1. Logistic Regression
 2. Random Forest
 3. Gradient Boosting
 4. LightGBM
 5. XGBoost
-
-- Set a threshold of 0.5 for decision-making. [PLEASE ADDRESS THIS]
-- Evaluated model performance using PR curve to determine the most efficient threshold. [PLEASE ADDRESS THIS]
-- Conducted cross-validation to ensure robustness. [PLEASE ADDRESS THIS]
-- We also considered whether a client had been contacted previously.
+- We considered whether a client had been contacted previously.
 
 Model Selection:
 - Considering our focus on maximizing recall (identifying true positives), we selected the scaled Gradient Boosting model.
