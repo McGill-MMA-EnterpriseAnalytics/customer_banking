@@ -31,6 +31,7 @@ The dataset is derived from direct marketing campaigns conducted by a Portuguese
 3. Gradient Boosting
 4. LightGBM
 5. XGBoost
+- Evaluated model performance using Precision-Recall curve to determine the most efficient threshold.
 - We considered whether a client had been contacted previously.
 
 Model Selection:
