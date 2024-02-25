@@ -34,7 +34,7 @@ The dataset is derived from direct marketing campaigns conducted by a Portuguese
 - We considered whether a client had been contacted previously.
 
 Model Selection:
-- Considering our focus on maximizing recall (identifying true positives), we selected the scaled Gradient Boosting model.
+- Considering our focus on maximizing recall (identifying true positives), we computed F2 scores and selected the scaled Gradient Boosting model.
 - Preferred Gradient Boosting over Logistic Regression for its superior performance.
 
 Timing Considerations:
