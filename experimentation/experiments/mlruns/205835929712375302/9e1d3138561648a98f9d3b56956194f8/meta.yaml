@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/aladelca/Library/CloudStorage/OneDrive-McGillUniversity/MMA/Enterprise_Architecture/targeted_marketing/experimentation/experiments/mlruns/205835929712375302/9e1d3138561648a98f9d3b56956194f8/artifacts
+end_time: 1713673902033
+entry_point_name: ''
+experiment_id: '205835929712375302'
+lifecycle_stage: active
+run_id: 9e1d3138561648a98f9d3b56956194f8
+run_name: lgbm onehot encoding
+run_uuid: 9e1d3138561648a98f9d3b56956194f8
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1713673900230
+status: 3
+tags: []
+user_id: aladelca

@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/aladelca/Library/CloudStorage/OneDrive-McGillUniversity/MMA/Enterprise_Architecture/targeted_marketing/experimentation/experiments/mlruns/205835929712375302/ef1faddc047a476fb00075e97b2ac0f7/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '205835929712375302'
+lifecycle_stage: active
+run_id: ef1faddc047a476fb00075e97b2ac0f7
+run_name: lgbm
+run_uuid: ef1faddc047a476fb00075e97b2ac0f7
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1713673447112
+status: 1
+tags: []
+user_id: aladelca

@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/aladelca/Library/CloudStorage/OneDrive-McGillUniversity/MMA/Enterprise_Architecture/targeted_marketing/experimentation/experiments/mlruns/205835929712375302/812c6797674844b7bba40cbc29441ba4/artifacts
+end_time: 1713674232159
+entry_point_name: ''
+experiment_id: '205835929712375302'
+lifecycle_stage: active
+run_id: 812c6797674844b7bba40cbc29441ba4
+run_name: lgbm ordinal encoding
+run_uuid: 812c6797674844b7bba40cbc29441ba4
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1713674232143
+status: 4
+tags: []
+user_id: aladelca
