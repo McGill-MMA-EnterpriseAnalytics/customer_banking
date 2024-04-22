@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/aladelca/Library/CloudStorage/OneDrive-McGillUniversity/MMA/Enterprise_Architecture/targeted_marketing/experimentation/experiments/mlruns/205835929712375302/e52de2f5d82f4c9db5867cacd1242f28/artifacts
+end_time: 1713672699264
+entry_point_name: ''
+experiment_id: '205835929712375302'
+lifecycle_stage: active
+run_id: e52de2f5d82f4c9db5867cacd1242f28
+run_name: catboost
+run_uuid: e52de2f5d82f4c9db5867cacd1242f28
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1713672697398
+status: 3
+tags: []
+user_id: aladelca

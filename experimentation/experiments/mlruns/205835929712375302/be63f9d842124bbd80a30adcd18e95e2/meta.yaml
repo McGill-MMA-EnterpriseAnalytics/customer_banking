@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/aladelca/Library/CloudStorage/OneDrive-McGillUniversity/MMA/Enterprise_Architecture/targeted_marketing/experimentation/experiments/mlruns/205835929712375302/be63f9d842124bbd80a30adcd18e95e2/artifacts
+end_time: 1713673964541
+entry_point_name: ''
+experiment_id: '205835929712375302'
+lifecycle_stage: active
+run_id: be63f9d842124bbd80a30adcd18e95e2
+run_name: lgbm label encoding
+run_uuid: be63f9d842124bbd80a30adcd18e95e2
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1713673964519
+status: 4
+tags: []
+user_id: aladelca
