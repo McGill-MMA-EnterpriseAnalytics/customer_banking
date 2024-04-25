@@ -37,41 +37,49 @@ class DynamicDataFrameTransformer(BaseEstimator, TransformerMixin):
 
     def fit(self, X, y=None):
         self.transformer.fit(X, y)
+        # handle feature names for transformations that alter them, such as OneHotEncoder
+        if hasattr(self.transformer, 'get_feature_names_out'):
+            if hasattr(self.transformer, 'named_transformers_'):
+                self.columns = [
+                    name for transformer in self.transformer.named_transformers_.values()
+                    if hasattr(transformer, 'get_feature_names_out')
+                    for name in transformer.get_feature_names_out()
+                ]
+            else:
+                self.columns = self.transformer.get_feature_names_out()
+        else:
+            self.columns = X.columns
         return self
 
     def transform(self, X):
-        # Transform the data
         X_transformed = self.transformer.transform(X)
-        
-        # Handle one-hot encoded columns specifically
-        if hasattr(self.transformer, 'get_feature_names_out'):
-            columns = self.transformer.get_feature_names_out()
-        else:
-            columns = X.columns  # Fallback if no method to get feature names
-        
-        return pd.DataFrame(X_transformed, columns=columns, index=X.index)
+        return pd.DataFrame(X_transformed, columns=self.columns, index=X.index)
+
 
 def preprocess_features(df):
     categorical_cols = [col for col in df.columns if df[col].dtype == 'object']
     numerical_cols = [col for col in df.select_dtypes(include=['int64', 'float64']).columns if col not in ['y']]
     
-    numerical_transformer = Pipeline(steps=[
+    numerical_transformer = Pipeline([
         ('imputer', SimpleImputer(strategy='mean')),
-        ('scaler', MinMaxScaler())
+        ('scaler', MinMaxScaler()),
     ])
 
-    categorical_transformer = Pipeline(steps=[
+    categorical_transformer = Pipeline([
         ('imputer', SimpleImputer(strategy='constant', fill_value='missing')),
         ('onehot', OneHotEncoder(handle_unknown='ignore'))
     ])
 
-    preprocessor = ColumnTransformer(
-        transformers=[
-            ('num', numerical_transformer, numerical_cols),
-            ('cat', DynamicDataFrameTransformer(categorical_transformer), categorical_cols)
-        ])
+    preprocessor = ColumnTransformer(transformers=[
+        ('num', numerical_transformer, numerical_cols),
+        ('cat', categorical_transformer, categorical_cols)
+    ])
 
-    return preprocessor
+    return Pipeline([
+        ('transform', preprocessor),
+        ('to_df', DynamicDataFrameTransformer(preprocessor))
+    ])
+
 
 
 # build the full preprocessing and modeling pipeline
