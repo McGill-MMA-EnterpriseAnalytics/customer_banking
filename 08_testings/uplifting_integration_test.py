@@ -30,11 +30,11 @@ class TestIntegration(unittest.TestCase):
         cls.model = RandomForestClassifier()
 
     def test_full_pipeline(self):
-        x_train, x_val, x_test, y_train, y_val, y_test = get_datasets(self.data, self.vars, self.target) # get data
+        x_train, x_val, x_test, y_train, y_val, y_test = get_datasets(self.data, self.vars, self.target) 
         
-        model, y_val_pred, y_proba_val = training_process(self.model, x_train, y_train, x_val, y_val) # train model
+        model, y_val_pred, y_proba_val = training_process(self.model, x_train, y_train, x_val, y_val)
 
-        y_pred, y_proba, metrics = predict_process(model, 0.5, x_test, y_test) # predict model
+        y_pred, y_proba, metrics = predict_process(model, 0.5, x_test, y_test)
         
         self.assertIsNotNone(metrics, "Metrics should not be None")
         self.assertTrue('accuracy' in metrics, "Accuracy should be calculated")
@@ -44,3 +44,6 @@ class TestIntegration(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main(argv=['first-arg-is-ignored'], exit=False)
+
+
+
