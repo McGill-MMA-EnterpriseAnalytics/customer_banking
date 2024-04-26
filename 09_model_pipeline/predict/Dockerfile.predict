@@ -18,7 +18,7 @@ ENV AWS_DEFAULT_REGION=us-east-1
 
 
 
-COPY /src/. .
+COPY 09_model_pipeline/predict/src/. .
 
 #COPY src/.bashrc .
 
