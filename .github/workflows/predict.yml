@@ -26,5 +26,5 @@ jobs:
           REPOSITORY: enterprise_datascience
           IMAGE_TAG: ${{ github.sha }}
         run: |
-          docker build -t $REGISTRY/$REPOSITORY:$IMAGE_TAG -f model_pipeline/predict/Dockerfile.predict .
+          docker build -t $REGISTRY/$REPOSITORY:$IMAGE_TAG -f 09_model_pipeline/predict/Dockerfile.predict .
           docker push $REGISTRY/$REPOSITORY:$IMAGE_TAG
