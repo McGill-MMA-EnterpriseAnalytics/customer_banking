@@ -28,3 +28,6 @@ jobs:
         run: |
           docker build -t $REGISTRY/$REPOSITORY:$IMAGE_TAG -f 09_model_pipeline/predict/Dockerfile.predict .
           docker push $REGISTRY/$REPOSITORY:$IMAGE_TAG
+          aws lambda update-function-code \
+            --function-name entreprise_datascience \
+            --image-uri $REGISTRY/$REPOSITORY:$IMAGE_TAG
