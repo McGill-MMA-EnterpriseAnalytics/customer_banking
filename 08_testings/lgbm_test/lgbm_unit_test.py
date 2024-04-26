@@ -13,7 +13,7 @@ class TestPreprocessing(unittest.TestCase):
 
     def test_load_data(self):
         try:
-            df = load_data('path_to_save_test_data.csv')
+            df = load_data('/Users/sheidamajidi/Desktop/Winter2024/Winter2024-2/INSY695-076/Project/testing_set.csv')
             self.assertIsNotNone(df)
             self.assertFalse(df.empty)
             self.assertIn('y', df.columns)
