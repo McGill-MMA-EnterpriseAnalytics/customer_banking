@@ -6,7 +6,7 @@ def lambda_handler(event, context):
     bucket_name = 'enterprise-data-science'
     path = 'training_files/trained_model.pickle'
     #client = boto3.client('s3')
-    
+    print('predict')
     data = json.loads(json.dumps(event))
     '''
     with open(event) as f:
