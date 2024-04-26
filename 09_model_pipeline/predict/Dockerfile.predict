@@ -1,0 +1,29 @@
+FROM public.ecr.aws/lambda/python:3.12
+
+
+COPY requirements.txt .
+
+
+RUN pip install --no-cache-dir --upgrade pip \
+    && pip install --no-cache-dir -r requirements.txt \
+    && rm requirements.txt
+
+
+##ARG D_COUNTRY=CO
+##ARG D_BUCKET=belc-bigdata-models-dlk-qas
+
+
+
+ENV AWS_DEFAULT_REGION=us-east-1
+
+
+
+COPY lambdas/predict_uc1/src/. .
+
+#COPY src/.bashrc .
+
+##RUN source .bashrc
+RUN chmod -R 0777 .
+
+
+CMD [ "main_predict.lambda_handler" ]
