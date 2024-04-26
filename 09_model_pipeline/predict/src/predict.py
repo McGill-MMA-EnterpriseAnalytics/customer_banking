@@ -4,7 +4,7 @@ import pickle
 class Predict:
     def main_predict(data, bucket_name, path):
         #model = load_models_from_s3(bucket_name,  path )
-        model = pickle.load(open("trained_model.pickle",'r'))
+        model = pickle.load(open("src/trained_model.pickle",'rb'))
         probas = model.predict_proba(data)
         preds = np.where(probas[:,1] >= 0.4, 1, 0)
         data['prob_0'] = probas[:,0]
