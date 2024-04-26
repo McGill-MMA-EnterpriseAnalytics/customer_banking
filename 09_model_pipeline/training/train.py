@@ -6,7 +6,8 @@ from sklearn.compose import ColumnTransformer
 from sklearn.pipeline import Pipeline
 from sklearn.impute import SimpleImputer
 from sklearn.preprocessing import StandardScaler, OneHotEncoder, LabelEncoder, OrdinalEncoder
-from lightgbm import LGBMClassifier
+from catboost import CatBoostClassifier
+
 def get_variables(df):
     x = df[VARS]
     y = df[TARGET].values.ravel()
@@ -22,7 +23,7 @@ def train_model(path):
     df = preprocess_data(path)
     x, y = get_variables(df)
     x = get_onehot_encoder(x)
-
+    print('Starting split ')
     x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=123)
 
     # Define the ordinal encoder transformation for categorical variables
@@ -41,10 +42,11 @@ def train_model(path):
     # Define the complete pipeline
     model = Pipeline(steps=[
         ('preprocessor', preprocessor),
-        ('classifier', LGBMClassifier(random_state=123, eval_metric='auc', verbose = -1))
+        ('classifier', CatBoostClassifier(random_state=123, verbose= False))
     ])
 
     # Fit the model
     model.fit(x_train, y_train)
+    print('End fit')
     return model
     
