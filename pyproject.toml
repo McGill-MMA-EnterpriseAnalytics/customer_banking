@@ -61,6 +61,7 @@ jupyter = "^1.0.0"
 ipykernel = "^6.29.4"
 featuretools = "^1.30.0"
 tensorflow = "^2.16.1"
+streamlit = "^1.33.0"
 
 
 [build-system]
