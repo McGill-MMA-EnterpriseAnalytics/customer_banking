@@ -13,7 +13,7 @@ def lambda_handler(event, context):
         data = json.load(f)
     print(data)
     '''
-    print('check')
+    
     #data = json.loads(json.dumps(event))
     try:
         data = data['result']
