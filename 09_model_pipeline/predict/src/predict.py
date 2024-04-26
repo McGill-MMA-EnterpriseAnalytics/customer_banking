@@ -1,5 +1,5 @@
 from utils import * 
-import numpy
+import numpy as np
 import pickle
 class Predict:
     def main_predict(data, bucket_name, path):
